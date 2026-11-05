@@ -1,0 +1,19 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "Shopify products output",
+  "description": "One dataset item per product (or per variant if flattenVariants). Stores that are not Shopify appear as an error row (not charged).",
+  "properties": {
+    "overview": {
+      "type": "string",
+      "title": "Products (overview)",
+      "description": "Title, store, price, URL per product.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items?view=overview"
+    },
+    "results": {
+      "type": "string",
+      "title": "Full results",
+      "description": "All fields including variants.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    }
+  }
+}

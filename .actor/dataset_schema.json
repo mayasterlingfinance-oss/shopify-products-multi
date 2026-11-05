@@ -1,0 +1,24 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "store": { "type": "string", "description": "Store origin URL" },
+      "title": { "type": "string", "description": "Product title" },
+      "url": { "type": "string", "description": "Product page URL" },
+      "vendor": { "type": "string", "description": "Vendor" },
+      "minPrice": { "type": "string", "description": "Lowest variant price" },
+      "anyAvailable": { "type": "boolean", "description": "Any variant in stock" },
+      "error": { "type": "string", "description": "Set when the store could not be read (not charged)" }
+    }
+  },
+  "views": {
+    "overview": {
+      "title": "Overview",
+      "transformation": { "fields": ["store", "title", "vendor", "productType", "minPrice", "maxPrice", "anyAvailable", "variantsCount", "url", "error"] },
+      "display": { "component": "table", "properties": { "url": { "format": "link" } } }
+    }
+  }
+}

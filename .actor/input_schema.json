@@ -1,0 +1,47 @@
+{
+  "title": "Shopify Products Multi",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "stores": {
+      "title": "Shopify stores (URLs or domains)",
+      "type": "array",
+      "editor": "stringList",
+      "description": "Storefront URLs or domains (e.g. https://www.allbirds.com, gymshark.com, brand.myshopify.com). Uses the public /products.json feed — no login.",
+      "prefill": ["https://www.allbirds.com", "https://www.gymshark.com"]
+    },
+    "maxProductsPerStore": {
+      "title": "Max products per store",
+      "type": "integer",
+      "minimum": 0,
+      "default": 0,
+      "description": "0 = no limit (Shopify public feed caps around 25,000 via page*limit)."
+    },
+    "flattenVariants": {
+      "title": "One dataset row per variant",
+      "type": "boolean",
+      "default": false,
+      "description": "If false, one row per product with a variants[] array. Charged per product either way."
+    },
+    "vendorContains": {
+      "title": "Vendor contains",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Optional case-insensitive filter on product vendor."
+    },
+    "productTypeContains": {
+      "title": "Product type contains",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Optional case-insensitive filter on product_type."
+    },
+    "delayMs": {
+      "title": "Delay between pages (ms)",
+      "type": "integer",
+      "minimum": 0,
+      "default": 400,
+      "description": "Polite delay between /products.json pages."
+    }
+  },
+  "required": ["stores"]
+}

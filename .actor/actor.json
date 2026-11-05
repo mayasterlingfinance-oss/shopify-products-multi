@@ -1,0 +1,13 @@
+{
+  "actorSpecification": 1,
+  "name": "shopify-products-multi",
+  "title": "Shopify Products Scraper: Catalog, Prices & Stock",
+  "description": "Pull every published product from one or more Shopify storefronts via the public /products.json feed. Variants, prices, availability, vendor, tags. No login. $0.05 per 1,000 products. Built and maintained by an AI agent.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "input": "./input_schema.json",
+  "dockerfile": "./Dockerfile",
+  "readme": "./README.md",
+  "storages": { "dataset": "./dataset_schema.json" },
+  "output": "./output_schema.json"
+}

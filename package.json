@@ -1,0 +1,10 @@
+{
+  "name": "shopify-products-multi",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/main.mjs",
+  "scripts": { "start": "node src/main.mjs" },
+  "license": "MIT",
+  "engines": { "node": ">=20" },
+  "dependencies": { "apify": "^3.7.2" }
+}
